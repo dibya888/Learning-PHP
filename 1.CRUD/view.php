@@ -47,10 +47,15 @@ if (isset($_GET['deleteid'])){
                         <span class='btn btn-danger'><a href='view.php?deleteid=$id' class='text-white text-decoration-none'>Delete</a></span></td>
                         </tr>";
                         }
-                    ?>
-                    <input type="button" value="Add Student" name="add" class="btn btn-success" onclick="window.location.href='insert.php'">    
+                        echo "</table>";
+                    ?>    
                 </div>
                 <div class= "col-sm-2">
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 col-12 text-center">
+                <input type="button" value="Add Student" name="add" class="btn btn-success" onclick="window.location.href='insert.php'">
                 </div>
             </div>
         </div>
