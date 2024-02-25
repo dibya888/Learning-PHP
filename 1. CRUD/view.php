@@ -51,7 +51,6 @@ if (isset($_GET['deleteid'])){
                     <input type="button" value="Add Student" name="add" class="btn btn-success" onclick="window.location.href='insert.php'">    
                 </div>
                 <div class= "col-sm-2">
-
                 </div>
             </div>
         </div>
