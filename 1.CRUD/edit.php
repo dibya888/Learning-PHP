@@ -37,7 +37,7 @@
                 <div class= "col-sm-3">
                 </div>
                 <div class= "col-sm-6 pt-4 mt-4 border border-success">
-                    <h3>Registration Form</h3>
+                    <h3 class="text-center p-2 bg-success text-white">Edit Form</h3>
                     <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
                         <input type="text" name="id" value=<?php echo $id?> hidden/>
                         First Name: <br>
