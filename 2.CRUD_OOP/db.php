@@ -66,7 +66,8 @@
     }
 
     $database = new db('localhost', 'root', '', 'store_db');
-    // $database->select('category', 'category_name');
-    $database->delete('category', 'category_id', '3');
+    
+    $database->select('category', 'category_name');
+    // $database->delete('category', 'category_id', '3');
 
 ?>    
