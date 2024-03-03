@@ -16,6 +16,9 @@
         @endif
     </div>
     <div>
+        <a href="{{route('product.create')}}">Create a Product</a>
+    </div>
+    <div>
         <table border="1">
 <tr>
     <th>ID</th>
@@ -24,6 +27,7 @@
     <th>Price</th>
     <th>Description</th>
     <th>Edit</th>
+    <th>Delete</th>
 </tr>
 @foreach ($products as $product)
 <tr>
@@ -34,6 +38,13 @@
     <td>{{$product->description}}</td>
     <td>
         <a href="{{route('product.edit', ['product' => $product])}}">Edit</a>
+    </td>
+    <td>
+        <form method="post" action="{{route('product.delete',['product'=>$product])}}">
+            @csrf
+            @method('delete')
+            <input type="submit" value="Delete">
+        </form>
     </td>
 </tr>
 @endforeach
