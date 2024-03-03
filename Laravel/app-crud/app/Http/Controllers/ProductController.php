@@ -8,7 +8,9 @@ use App\Models\Product;
 class ProductController extends Controller
 {
     public function index(){
-        return view('products.index');  //Show index in Products Folder. Location: Laravel/app-crud/resources/views/products/index.blade.php
+        $products = Product::all();
+        return view('products.index', ['products'=>$products]);  //Show index in Products Folder. Location: Laravel/app-crud/resources/views/products/index.blade.php
+        
     }
     public function create(){
         return view('products.create'); //Show Create Form in Products Folder. Location: Laravel/app-crud/resources/views/products/create.blade.php
@@ -25,5 +27,21 @@ class ProductController extends Controller
         $newProduct = Product::create($data);
 
         return redirect (route('product.index'));
+    }
+
+    public function edit(Product $product){
+        return view('products.edit',['product' => $product]);
+    }
+    public function update(Product $product, Request $request){
+        $data = $request->validate([
+            'name' => 'required',
+            'qty' => 'required|numeric',
+            'price' => 'required|decimal:0,2',
+            'description' => 'nullable'
+        ]);
+
+        $product->update($data);
+
+        return redirect(route('product.index'))->with('success','Product Updated Successfully');
     }
 }
