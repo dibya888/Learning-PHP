@@ -10,8 +10,17 @@
             <div class="card">
                 <div class="card-body login-card-body">
                     <p class="login-box-msg">Sign in to start your session</p>
-
-                    <form action="../../index3.html" method="post">
+                    @error('name')
+                        {{ $message }}
+                    @enderror
+                    @error('email')
+                        {{ $message }}
+                    @enderror
+                    @error('password')
+                        {{ $message }}
+                    @enderror
+                    <form action="{{ route('store') }}" method="POST">
+                        @csrf
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="Name" name="name">
                             <div class="input-group-append">
