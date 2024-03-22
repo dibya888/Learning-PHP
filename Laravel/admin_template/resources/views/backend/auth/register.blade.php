@@ -9,7 +9,7 @@
             <!-- /.login-logo -->
             <div class="card">
                 <div class="card-body login-card-body">
-                    <p class="login-box-msg">Sign in to start your session</p>
+                    <p class="login-box-msg">Register to gain access</p>
                     @error('name')
                         {{ $message }}
                     @enderror
